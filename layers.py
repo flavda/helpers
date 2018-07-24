@@ -6,6 +6,7 @@ from collections import OrderedDict
 from .utils import check_or_create_dir, same_type
 
 
+
 class View(nn.Module):
     def __init__(self, shape):
         super(View, self).__init__()
