@@ -126,7 +126,7 @@ def train_fid_model(args, fid_type='conv', batch_size=32):
 
         for epoch in range(1, args.epochs + 1):
             train(epoch, model, optimizer, loader, args)
-            loss, _ = test(epoch, model, loader, args)
+            loss, accuracy = test(epoch, model, loader, args)
             if early_stop(loss):
                 early_stop.restore()
                 break

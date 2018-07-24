@@ -751,3 +751,18 @@ def build_dense_decoder(input_size, output_shape, latent_size=512, activation_fn
         nn.Linear(latent_size, int(np.prod(output_shape))),
         View([-1] + output_shape)
     )
+
+# def build_dense_classifier(self, input_size, number_labels, latent_size=512, activation_fn=nn.ELU, normalization_str="none"):
+#     input_flat = int(np.prod(input_size))
+#     output_flat = int(np.prod(number_labels))
+#     return nn.Sequential(
+#         View([-1, input_flat]),
+#         nn.Linear(input_flat, latent_size),
+#         add_normalization(normalization_str, 1, latent_size, num_groups=32),
+#         activation_fn(),
+#         nn.Linear(latent_size, latent_size),
+#         add_normalization(normalization_str, 1, latent_size, num_groups=32),
+#         activation_fn(),
+#         nn.Linear(latent_size, output_flat),
+#         View([-1] + number_labels)
+#     )
